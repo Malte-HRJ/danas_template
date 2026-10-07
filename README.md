@@ -1,14 +1,4 @@
-# Astro Starter Kit: Basics
-
-```sh
-npm create astro@latest -- --template basics
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
 ## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
 
 ```text
 /
@@ -26,21 +16,47 @@ Inside of your Astro project, you'll see the following folders and files:
 └── package.json
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## NOTE til Dana
+
+- components og layouts skal starte med stort bogstav
+- pages starter med et lille bogstav
+- et astro component/page/layout er bygget sådan her op:
+
+```astro
+/
+---
+//frontmatter, her skriver du den kode der skal køre når siden bliver bygget
+// for eksempel hvis du importere components eller hente data
+import MitSuperSejeComponent from "../components/MitSuperSejeComponent"
+//eksempel
+const listeAfData = ["Malte", "er", "Sej"]
+---
+
+<DIT_HTML_KODE class="whatever">
+...
+<MitSuperSejeComponent></MitSuperSejeComponent>
+// du kan bruge curly braces til at køre "bygge kode". eks:
+{listeAfData}
+</DIT_HTML_KODE>
+
+<style>
+//din css kode / styling her.
+.whatever{
+    *styling*
+}
+// styling er scoped, så det css skrevet her gælder kun for ".whatever" i dette component
+</style>
+
+<script>
+//her kan du skrive javascript kode
+</script>
+```
 
 ## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+| `npm install` | Installs dependencies |
+| `npm run dev` | Starter en lokal server (din hjemmeside) på urlen `localhost:4321` |
+| `npm run build` | Build your production site to `./dist/` |
+| `npm run astro -- --help` | Get help using the Astro CLI (CLI = command line interface) |
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+[Astros dokumentation](https://docs.astro.build)

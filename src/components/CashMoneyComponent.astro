@@ -1,0 +1,53 @@
+---
+
+---
+
+<div class="beast_wrapper">
+  <img src="src/assets/ello.jpeg" alt="" class="beast" />
+  <h1></h1>
+</div>
+
+<style>
+  div {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 1rem;
+  }
+  .beast {
+    width: 50%;
+    border-radius: 8px;
+    border: 0.5rem hotpink solid;
+    animation: sejAnimation 1s ease-in-out infinite;
+  }
+  h1:empty {
+    display: none;
+  }
+  @keyframes sejAnimation {
+    0% {
+      transform: scale(1);
+    }
+    20% {
+      transform: scale(1.3) rotate(10deg);
+    }
+    40% {
+      transform: rotate(-10deg);
+    }
+    60% {
+      transform: rotate(5deg);
+    }
+    80% {
+      transform: rotate(-5deg);
+    }
+    100% {
+      transform: scale(1) rotate(0deg);
+    }
+  }
+</style>
+
+<script>
+  const beast = document.querySelector(".beast_wrapper");
+  beast?.addEventListener("click", () => {
+    beast.querySelector("h1").textContent = "YOOOOOOOO!!!";
+  });
+</script>
